@@ -15,4 +15,17 @@ public class UserRegistrationTest {
         UserRegistration checkUserRegistration = new UserRegistration();
         Assert.assertFalse(checkUserRegistration.checkFirstName("prasad"));
     }
+
+    @Test
+    public void whenGivenLastName_CheckFirstCharCapital_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertTrue(checkUserRegistration.checkLastName("Chaudhari"));
+    }
+
+    @Test
+    public void whenGivenLastName_CheckFirstCharNotCapital_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration = new UserRegistration();
+        Assert.assertFalse(checkUserRegistration.checkLastName("chaudhari"));
+    }
+
 }
