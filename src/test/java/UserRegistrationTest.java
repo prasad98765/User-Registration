@@ -38,4 +38,16 @@ public class UserRegistrationTest {
         UserRegistration checkUserRegistration  = new UserRegistration();
         Assert.assertFalse(checkUserRegistration.checkEmail("abc123@.com"));
     }
+
+    @Test
+    public void whenGivenMobileNumber_CheckMobileNumberValid_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertTrue(checkUserRegistration.checkMobileNumber("+91 7798917132"));
+    }
+
+    @Test
+    public void whenGivenMobileNumber_CheckMobileNumberNotValid_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertFalse(checkUserRegistration.checkMobileNumber("+9 7798917132"));
+    }
 }
