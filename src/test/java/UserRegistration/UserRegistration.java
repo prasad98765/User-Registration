@@ -19,6 +19,6 @@ public class UserRegistration {
     }
 
     public boolean checkPassword(String password) {
-        return  ((password.matches("^[a-zA-Z0-9]{8}$")));
+        return  ((password.matches("^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$")));
     }
 }

@@ -62,4 +62,16 @@ public class UserRegistrationTest {
         UserRegistration checkUserRegistration  = new UserRegistration();
         Assert.assertFalse(checkUserRegistration.checkPassword("asd123"));
     }
+
+    @Test
+    public void whenGivenPassword_CheckAtleastOneUpperCase_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertTrue(checkUserRegistration.checkPassword("abcdE123"));
+    }
+
+    @Test
+    public void whenGivenPassword_CheckWithoutUpperCase_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertFalse(checkUserRegistration.checkPassword("asdf1234"));
+    }
 }
