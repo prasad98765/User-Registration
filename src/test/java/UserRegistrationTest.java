@@ -50,4 +50,16 @@ public class UserRegistrationTest {
         UserRegistration checkUserRegistration  = new UserRegistration();
         Assert.assertFalse(checkUserRegistration.checkMobileNumber("+9 7798917132"));
     }
+
+    @Test
+    public void whenGivenPassword_CheckEightCharacters_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertTrue(checkUserRegistration.checkPassword("asdf1234"));
+    }
+
+    @Test
+    public void whenGivenPassword_CheckNotEightCharacters_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertFalse(checkUserRegistration.checkPassword("asd123"));
+    }
 }
