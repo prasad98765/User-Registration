@@ -54,7 +54,7 @@ public class UserRegistrationTest {
     @Test
     public void whenGivenPassword_CheckEightCharacters_ShouldReturnBoolean() {
         UserRegistration checkUserRegistration  = new UserRegistration();
-        Assert.assertTrue(checkUserRegistration.checkPassword("asdf1234"));
+        Assert.assertTrue(checkUserRegistration.checkPassword("asdF1234"));
     }
 
     @Test
@@ -72,6 +72,18 @@ public class UserRegistrationTest {
     @Test
     public void whenGivenPassword_CheckWithoutUpperCase_ShouldReturnBoolean() {
         UserRegistration checkUserRegistration  = new UserRegistration();
-        Assert.assertFalse(checkUserRegistration.checkPassword("asdf1234"));
+        Assert.assertFalse(checkUserRegistration.checkPassword("asdf123"));
+    }
+
+    @Test
+    public void whenGivenPassword_CheckOneNumericNumber_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertTrue(checkUserRegistration.checkPassword("asdF1234"));
+    }
+
+    @Test
+    public void whenGivenPassword_CheckWithoutNumericNumber_ShouldReturnBoolean() {
+        UserRegistration checkUserRegistration  = new UserRegistration();
+        Assert.assertFalse(checkUserRegistration.checkPassword("asdf"));
     }
 }
