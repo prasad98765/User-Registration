@@ -75,4 +75,14 @@ public class UserRegistrationTest {
         Assert.assertFalse(checkUserRegistration.checkPassword("asdF"));
     }
 
+    @Test
+    public void whenGivenPassword_CheckOneSpecialCharacter_ShouldReturnBoolean(){
+        Assert.assertTrue(checkUserRegistration.checkPassword("Passwo$1"));
+    }
+
+    @Test
+    public void whenGivenPassword_CheckWithoutSpecialCharacter_ShouldReturnBoolean() {
+        Assert.assertFalse(checkUserRegistration.checkPassword("Passw241"));
+    }
+
 }
