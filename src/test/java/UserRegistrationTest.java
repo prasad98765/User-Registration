@@ -85,4 +85,5 @@ public class UserRegistrationTest {
         Assert.assertFalse(checkUserRegistration.checkPassword("Passw241"));
     }
 
+
 }

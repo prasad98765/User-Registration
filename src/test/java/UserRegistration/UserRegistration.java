@@ -21,4 +21,6 @@ public class UserRegistration {
     public boolean checkPassword(String password) {
         return  ((password.matches("^(?=.{8}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&]).*$")));
     }
+
+
 }
